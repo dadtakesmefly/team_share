@@ -126,3 +126,14 @@
          <link rel="stylesheet" href="css/pace-theme-barber-shop.css"/>
          <!--进度条js-->
          <script src="lib/pace.js"></script>
+
+# 判断当前手机系统
+    var u = navigator.userAgent;
+    //安卓
+    if (u.indexOf("Android") > -1 || u.indexOf("Linux") > -1) {
+       
+    }
+    //苹果
+    if (u.indexOf("iPhone") > -1) {
+       
+    }
