@@ -96,11 +96,3 @@
             return [year,month,date].join('/')+" "+hour+":"+minute+":"+second;
         }
          dateConvert(1497861704308)
-
-# 网页加载进度条
-## 自动监听ajax请求，生成进度条
-
-      <link rel="stylesheet" href="css/pace-theme-barber-shop.css"/>
-      
-      <script src="lib/pace.js"></script>
-      
