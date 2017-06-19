@@ -69,7 +69,30 @@
             
         }
         
-        
+## 调用手机系统方法，判断该页面是否在app内打开，在app内则不显示底部的下载app按钮，反之则显示
+#### 需要ios和Android共同配合，写一个相同的方法，安卓app内返回Android，苹果app内返回ios，浏览器打开不调用该方法
+
+            window.onload= function () {
+            
+                aisinJs.getMode();//系统方法
+                
+                alert(aisinJs.getMode())；
+                
+                //在app内
+                
+                if(aisinJs.getMode()){
+                
+                    $(".links").hide();
+                    
+                }
+                
+                else{
+                
+                    $(".links").show();
+                    
+               }
+
+      
 # URL传递中文时候
    result.data.teamName==团队名称；
    
