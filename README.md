@@ -137,3 +137,6 @@
     if (u.indexOf("iPhone") > -1) {
        
     }
+
+# 上拉加载更多 详见 teamEventsList.html以及相关js
+
