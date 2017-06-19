@@ -96,8 +96,7 @@
             return [year,month,date].join('/')+" "+hour+":"+minute+":"+second;
         }
          dateConvert(1497861704308)
-                  
-
+         
 # 网页加载进度条
 ### 自动监听ajax
          <!--进度条样式-->
