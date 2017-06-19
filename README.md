@@ -95,4 +95,12 @@
             date = date < 10 ? "0" + date : date ;
             return [year,month,date].join('/')+" "+hour+":"+minute+":"+second;
         }
-         dateConvert(1497861704308)
+         dateConvert(1497861704308)
+                  
+
+# 网页加载进度条
+### 自动监听ajax
+         <!--进度条样式-->
+         <link rel="stylesheet" href="css/pace-theme-barber-shop.css"/>
+         <!--进度条js-->
+         <script src="lib/pace.js"></script>
