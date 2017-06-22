@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/download.css"/>
     <script src="jquery-1.8.3/jquery.min.js"></script>
-
+    <script src="lib/common.js"></script>
     <title>爱心公益，让公益更简单</title>
 </head>
 <body>
@@ -32,24 +32,6 @@
 <!--站长统计 end -->
 
 </body>
-<script>
-
-    /*让文字和标签的大小随着屏幕的尺寸做变话 等比缩放*/
-    var html = document.getElementsByTagName('html')[0];
-    var width = window.innerWidth;
-    var fontSize = 100/640*width;
-    if(width>640){
-        fontSize=100;
-    }
-    html.style.fontSize = fontSize +'px';
-    window.onresize = function(){
-        var html = document.getElementsByTagName('html')[0];
-        var width = window.innerWidth;
-        var fontSize = 100/640 * width;
-        html.style.fontSize = fontSize +'px';
-    }
-
-</script>
 <script type="text/javascript">
     var website_url = "http://www.cnaisin.com";
     // var android_url = "https://pro-app-qn.fir.im/60470926f784a0f7dff9959b572331edf81ee651.apk?attname=爱信公益v.apk_1.1.2.apk&e=1492712441&token=LOvmia8oXF4xnLh0IdH05XMYpH6ENHNpARlmPc-T:4kE7qyQx_cenZ30qmhWHTkFu0K4=";

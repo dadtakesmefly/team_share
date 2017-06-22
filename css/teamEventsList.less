@@ -1,31 +1,55 @@
 html,body{
   max-width: 640px;
   margin: 0 auto;
+  background-color: #F2EFEE;
 }
+//h3{
+//  background-color: #FFEAD2;
+//  height: 0.7rem;
+//  line-height: 0.7rem;
+//  text-indent: 1em;
+//  font-size: 0.3rem;
+//  color: #BC5332;
+//  margin-bottom: 5px;
+//  span{
+//    font-size: 0.3rem;
+//  }
+//}
 section{
   ul{
     li{
       list-style: none;
       margin-bottom: 5px;
+      position: relative;
       img{
         width: 100%;
         position: relative;
       }
+      .banner{
+        height: 3rem;
+      }
       p{
-        width: 2rem;
-        border: 1px solid red;
+        width: 1.3rem;
+        border-right-style: none;
+        border-bottom-left-radius: 40px;
+        border-top-left-radius: 40px;
         text-align: center;
         padding: 5px;
-        margin-top: -0.8rem;
         position: absolute;
+        right: 0;
+        top:0.4rem;
         color:white;
         margin-left: 10px;
         font-size: 0.3rem;
+        background-color: #FFA61B;
+
       }
       div{
-        background-color: springgreen;
-        padding: 5px 10px;
+        background-color: rgba(0,0,0,0.7);
+        padding: 0px 10px;
         position: relative;
+        height: 1.2rem;
+        margin-top: -1.2rem;
         h4{
           overflow: hidden;
           text-overflow:ellipsis;
@@ -33,7 +57,8 @@ section{
           font-size: 0.3rem;
           width: 4.5rem;
           margin-bottom: 0.1rem;
-
+          color: white;
+          padding-top: 0.1rem;
         }
         img{
           width: 5%;
@@ -43,13 +68,16 @@ section{
           //margin-left: 5px;
         }
         span{
-          font-size: 0.25rem;
+          font-size: 0.24rem;
           vertical-align: middle;
           //margin-left: 5px;
           margin-right: 5px;
+          color:#999;
+          margin-top: 0.2rem;
         }
         .time{
           margin-left: 2px;
+          margin-top: 0.2rem;
         }
         .teampic{
           width: 1rem;
@@ -58,6 +86,8 @@ section{
           position: absolute;
           right: 10px;
           top: -0.5rem;
+          border: 1px solid white;
+          margin-top: 0.2rem;
         }
       }
     }
