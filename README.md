@@ -137,4 +137,22 @@
     if (u.indexOf("iPhone") > -1) {
        
     }
+# rem布局
+        /*让文字和标签的大小随着屏幕的尺寸做变话 等比缩放*/
+       (function (doc, win) {
+           var docEl = doc.documentElement,
+           resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+           recalc = function () {
+                 var clientWidth = docEl.clientWidth;
+                 if (!clientWidth) return;
+                     if(clientWidth>=640){
+                          docEl.style.fontSize = '100px';
+                  }else{
+                           docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                       }
+                   };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+            })(document, window);
 # 上拉加载更多 详见 teamEventsList.html和相关js
