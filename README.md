@@ -5,69 +5,59 @@
 #### （坑）七牛获取的图片地址，不带后缀jpg或png的图片，在安卓微信浏览器不能正常显示，苹果则可以
 
            function openApp(){
-           
-             //var schemeUrl = 'app里即有的协议如：  apps custom url schemes ';
-             
-            var data={"type":"Team","relatId":"8","title":"","content":"","remark":""};
-            
-            var schemeUrl ="cnaisin://?data="+JSON.stringify(data);
-            
-            if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-            
-                var loadDateTime = new Date();
-                
-                window.setTimeout(function() {
-                
-                    var timeOutDateTime = new Date();
-                    
-                    if (timeOutDateTime - loadDateTime > 5000) {
-                    
-                        //window.location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cnaisin.axgy"
-                        
-                        return
-                        
-                    } else {
-                    
-                        //layer.open({
-                        //    skin:"demo-class",
-                        //    title:"提示",
-                        //    content:"无法打开,请点击底部下载爱信APP按钮"
-                        //})
-                    }
-                    
-                },25);
-                
-                window.location.href = schemeUrl;
-                
-            } else if (navigator.userAgent.match(/android/i)) {
-            
-                var state = null;
-                
-                try {
-                
-                    state = window.open(schemeUrl, '_self');
-                    
-                } catch(e) {}
-                
-                if (state) {
-                
-                    //alert('无法打开');
-                    //layer.open({
-                    //    skin:"demo-class",
-                    //    title:"提示",
-                    //    content:"无法打开,请点击底部下载爱信APP按钮"
-                    //})
-                    //window.close();
-                    
+        //  var schemeUrl = 'app里即有的协议如：  apps custom url schemes ';
+        var data = {"type":"Normal","relatId":"8","title":"","content":"","remark":""};
+        var schemeUrl = "cnaisin://?data="+JSON.stringify(data);
+        if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+            var loadDateTime = new Date();
+            window.setTimeout(function() {
+                var timeOutDateTime = new Date();
+                if (timeOutDateTime - loadDateTime > 5000) {
+
                 } else {
-                
-                    //window.location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cnaisin.axgy"
-                    
+                    window.location.href = "itms-apps://itunes.apple.com/app/id1190774356";
                 }
-                
+            },25);
+            window.location.href = schemeUrl;
+        } else if (navigator.userAgent.match(/android/i)) {
+            var state = null;
+            try {
+                state = window.open(schemeUrl, '_self');
+            } catch(e) {}
+            if (state) {
+            } else {
+                window.location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cnaisin.axgy"
             }
-            
         }
+    }
+    //判断用户设备是pc还是移动  pc时候点击打开app 跳转到官网 里面都附有下载链接
+    function browserRedirect() {
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            return
+        } else {
+            $(".downloading").on("click", function () {
+                window.location.href="https://www.cnaisin.com";
+            })
+        }
+    }
+    browserRedirect();
+    //点击底部下载app按钮消失
+    $(".close").on("click", function () {
+        $(".links").fadeOut();
+    })
+    //点击下载 打开app
+    $(".downloading").on("click", function () {
+        openApp()
+    })
         
 ## 调用手机系统方法，判断该页面是否在app内打开，在app内则不显示底部的下载app按钮，反之则显示
 #### 需要ios和Android共同配合，写一个相同的方法，安卓app内返回Android，苹果app内返回ios，浏览器打开不调用该方法
