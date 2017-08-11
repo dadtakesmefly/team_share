@@ -146,3 +146,5 @@
             doc.addEventListener('DOMContentLoaded', recalc, false);
             })(document, window);
 # 上拉加载更多 详见 teamEventsList.html和相关js
+## 效果图
+ ![img](images/查询活动.png)
